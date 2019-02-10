@@ -1,17 +1,4 @@
-//(EXAM) Solve sudoku
-/*zasada algorytmu:
-1 policzyc ilosc danych cyfr i zaczac od tej, ktora powtarza sie najczesciej
-2 wyeliminowac wszystkie pola, na ktorych nie moze ta cyfra wystepowac:
-na podstawie kolumn, wierszy i kratek
-3. znalezc kratke, gdzie dana cyfra moze wystapic tylko w jednym miejscu i uzupelnic to pole
-4. gdy dana cyfra wyczerpie miejsca, gdzie mozna ja wstawic ze 100 procentowa pewnoscia, przejsc
-do kolejnej najliczniejszej cyfry i powtarzac operacje w ten sposob az skoncza sie cyfry
-5. w przypadku skonczenia cyfr i nie wypelnienia wszystkich pol, ponownie policzyc cyfry
-i zaczac powyzszy algorytm od nowa z nowymi danymi
-*/
-
-//edit: teraz już wiem, że działa tylko na tych konkretnych liczbach i że algorytm jest błędny w samym założeniu, ale szkoda nie wrzucić
-// skoro się napracowałem
+//sudoku easy-level solver
 
 const fs = require('fs');
 const data = JSON.parse(fs.readFileSync('./JS_sudoku.json'));
@@ -965,14 +952,10 @@ const clearWrongFields = (dat, num) => {
             }
         }
     };
-    console.log(Math.floor(((iterationValueCounter/405)*100))+ '% solved');
     
     if (iterationValueCounter == 405) {
         stop = true;
-    } else {
-        iterationValueCounter = 0;
     };
-
 
 
 }
